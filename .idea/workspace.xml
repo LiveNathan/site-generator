@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2576af2b-2f9d-46c8-9096-3d60e5223584" name="Changes" comment="first commit" />
+    <list default="true" id="2576af2b-2f9d-46c8-9096-3d60e5223584" name="Changes" comment="Add main section and JS script to index.html&#10;&#10;This commit introduces a new 'main' section with the ID 'root' into the index.html structure for better content organization. Additionally, a JavaScript source file 'index.js' is referenced in index.html and created. This is a part of restructuring the code to adapt to a more">
+      <change afterPath="$PROJECT_DIR$/default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,15 +20,20 @@
       <list>
         <option value="package.json" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2TkZjltFQXSYif7yc13D5zBmzMu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -40,12 +50,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "reference.idesettings.emmet.jsx",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -63,6 +74,8 @@
       <option name="presentableId" value="Default" />
       <updated>1691589177240</updated>
       <workItem from="1691589179064" duration="667000" />
+      <workItem from="1691590094471" duration="211000" />
+      <workItem from="1691672536979" duration="1785000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -72,7 +85,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691589880210</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add main section and JS script to index.html&#10;&#10;This commit introduces a new 'main' section with the ID 'root' into the index.html structure for better content organization. Additionally, a JavaScript source file 'index.js' is referenced in index.html and created. This is a part of restructuring the code to adapt to a more component-based architecture.">
+      <option name="closed" value="true" />
+      <created>1691590309511</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1691590309511</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,6 +102,11 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="Add main section and JS script to index.html&#10;&#10;This commit introduces a new 'main' section with the ID 'root' into the index.html structure for better content organization. Additionally, a JavaScript source file 'index.js' is referenced in index.html and created. This is a part of restructuring the code to adapt to a more" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add main section and JS script to index.html&#10;&#10;This commit introduces a new 'main' section with the ID 'root' into the index.html structure for better content organization. Additionally, a JavaScript source file 'index.js' is referenced in index.html and created. This is a part of restructuring the code to adapt to a more" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
