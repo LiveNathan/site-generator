@@ -1,13 +1,23 @@
 import { COOKING_SITE } from './index.js';
-function createHeader() {
+function createHeader(section) {
     const header = document.createElement('h2');
-    // header.id = 'main-header';
-    // header.classList.add('header');
-    header.innerText = 'Hello World';
+    const headerText = section.header;
+    header.innerText = headerText;
+    header.id = headerText.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^a-z0-9\-]/g, '')  // Replace white space with dash.
+    header.classList.add('header text-2xl font-bold');
+
+    const imagesContainer = document.createElement('div');
+    imagesContainer.classList.add('');
+    section.images.forEach(imageUrl => {
+        const image = document.createElement('img');
+        image.src = imageUrl;
+        imagesContainer.appendChild(image);
+    })
+
     document.body.appendChild(header);
 }
 
-function createText() {
+function createText(section) {
     const text = document.createElement('p');
     // text.id = 'main-header';
     // text.classList.add('header');
@@ -15,7 +25,7 @@ function createText() {
     document.body.appendChild(text);
 }
 
-function createGallery() {
+function createGallery(section) {
     const gallery = document.createElement('img');
     // gallery.id = 'main-header';
     // gallery.classList.add('header');
@@ -23,7 +33,7 @@ function createGallery() {
     document.body.appendChild(gallery);
 }
 
-function createContact() {
+function createContact(section) {
     const contact = document.createElement('p');
     // contact.id = 'main-header';
     // contact.classList.add('header');
@@ -31,7 +41,7 @@ function createContact() {
     document.body.appendChild(contact);
 }
 
-function createLinks() {
+function createLinks(section) {
     const links = document.createElement('a');
     // links.id = 'main-header';
     // links.classList.add('header');
@@ -42,19 +52,19 @@ function createLinks() {
 COOKING_SITE.sections.forEach(section => {
     switch (section.type) {
         case 'header':
-            createHeader();
+            createHeader(section);
             break;
         case 'text':
-            createText();
+            createText(section);
             break;
         case 'gallery':
-            createGallery();
+            createGallery(section);
             break;
         case 'contact':
-            createContact();
+            createContact(section);
             break;
         case 'links':
-            createLinks();
+            createLinks(section);
             break;
     }
 })

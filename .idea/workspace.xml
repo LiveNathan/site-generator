@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2576af2b-2f9d-46c8-9096-3d60e5223584" name="Changes" comment="Refactor project structure and remove outdated files&#10;&#10;Project structure was updated to create clear separation between source code and root directory. To achieve this, files 'index.js' and 'd.js' were moved to a new 'src' folder. References to these scripts in 'index.html' were updated to reflect their new locations.&#10;&#10;Additionally, 'hello.js' was removed from project as it has become outdated and is no longer required. &#10;&#10;Simultaneously, PropertiesComponent in the workspace.xml was formatted. &#10;&#10;These changes aim to streamline the project's structure and enhance its maintainability.">
-      <change afterPath="$PROJECT_DIR$/src/sections.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+    <list default="true" id="2576af2b-2f9d-46c8-9096-3d60e5223584" name="Changes" comment="Refactor project structure and remove outdated files.&#10;&#10;Reorganized project structure for clarity and maintainability by creating a new 'src' folder and moving 'index.js' and 'd.js' into it. This also required updating 'index.html' to correctly reference these scripts. 'hello.js' - an outdated file - was removed. Workspace.xml was likewise formatted, and a fresh task introduced in the local task counter. Additionally, a new file 'sections.js' was created exporting a 'COOKING_SITE' object and building site sections. Exporting the COOKING_SITE variable from 'index.js' was needed for this.">
+      <change beforePath="$PROJECT_DIR$/src/sections.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +75,7 @@
       <workItem from="1691590094471" duration="211000" />
       <workItem from="1691672536979" duration="1785000" />
       <workItem from="1691880435067" duration="1543000" />
-      <workItem from="1691954397754" duration="916000" />
+      <workItem from="1691954397754" duration="2003000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -112,7 +109,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691882672489</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Refactor project structure and remove outdated files.&#10;&#10;Reorganized project structure for clarity and maintainability by creating a new 'src' folder and moving 'index.js' and 'd.js' into it. This also required updating 'index.html' to correctly reference these scripts. 'hello.js' - an outdated file - was removed. Workspace.xml was likewise formatted, and a fresh task introduced in the local task counter. Additionally, a new file 'sections.js' was created exporting a 'COOKING_SITE' object and building site sections. Exporting the COOKING_SITE variable from 'index.js' was needed for this.">
+      <option name="closed" value="true" />
+      <created>1691955337601</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1691955337601</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,7 +129,8 @@
     <MESSAGE value="Add main section and JS script to index.html&#10;&#10;This commit introduces a new 'main' section with the ID 'root' into the index.html structure for better content organization. Additionally, a JavaScript source file 'index.js' is referenced in index.html and created. This is a part of restructuring the code to adapt to a more" />
     <MESSAGE value="Remove `hello.js` and restructure project with `index.html` and new `d.js`&#10;&#10;Removed outdated `hello.js` file. Restructured project by adding main section and a JavaScript script to `index.html`. Introduced a new `d.js` file with a function to create a header. All these changes enhance content organization and orient the project towards a more component-based architecture." />
     <MESSAGE value="Refactor project structure and remove outdated files&#10;&#10;Project structure was updated to create clear separation between source code and root directory. To achieve this, files 'index.js' and 'd.js' were moved to a new 'src' folder. References to these scripts in 'index.html' were updated to reflect their new locations.&#10;&#10;Additionally, 'hello.js' was removed from project as it has become outdated and is no longer required. &#10;&#10;Simultaneously, PropertiesComponent in the workspace.xml was formatted. &#10;&#10;These changes aim to streamline the project's structure and enhance its maintainability." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor project structure and remove outdated files&#10;&#10;Project structure was updated to create clear separation between source code and root directory. To achieve this, files 'index.js' and 'd.js' were moved to a new 'src' folder. References to these scripts in 'index.html' were updated to reflect their new locations.&#10;&#10;Additionally, 'hello.js' was removed from project as it has become outdated and is no longer required. &#10;&#10;Simultaneously, PropertiesComponent in the workspace.xml was formatted. &#10;&#10;These changes aim to streamline the project's structure and enhance its maintainability." />
+    <MESSAGE value="Refactor project structure and remove outdated files.&#10;&#10;Reorganized project structure for clarity and maintainability by creating a new 'src' folder and moving 'index.js' and 'd.js' into it. This also required updating 'index.html' to correctly reference these scripts. 'hello.js' - an outdated file - was removed. Workspace.xml was likewise formatted, and a fresh task introduced in the local task counter. Additionally, a new file 'sections.js' was created exporting a 'COOKING_SITE' object and building site sections. Exporting the COOKING_SITE variable from 'index.js' was needed for this." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor project structure and remove outdated files.&#10;&#10;Reorganized project structure for clarity and maintainability by creating a new 'src' folder and moving 'index.js' and 'd.js' into it. This also required updating 'index.html' to correctly reference these scripts. 'hello.js' - an outdated file - was removed. Workspace.xml was likewise formatted, and a fresh task introduced in the local task counter. Additionally, a new file 'sections.js' was created exporting a 'COOKING_SITE' object and building site sections. Exporting the COOKING_SITE variable from 'index.js' was needed for this." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
