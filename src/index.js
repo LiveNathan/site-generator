@@ -8,7 +8,7 @@ const root = document.getElementById("root");
 //         console.log(error)
 //     })
 
-const COOKING_SITE = {
+export const COOKING_SITE = {
     "sections": [
         {
             "type": "header",
@@ -40,4 +40,4 @@ function buildSite(site) {
     buildSections(site.sections)
 }
 
-buildSite(COOKING_SITE)
+buildSite(COOKING_SITE);
