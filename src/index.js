@@ -1,14 +1,4 @@
-const root = document.getElementById("root");
-// const cookingSiteJson = "resources/site_generator/cooking.json";
-
-// fetch(cookingSiteJson)
-//     .then(response => response.json())
-//     .then(data => buildSite(data))
-//     .catch((error) => {
-//         console.log(error)
-//     })
-
-export const COOKING_SITE = {
+const COOKING_SITE = {
     "sections": [
         {
             "type": "header",

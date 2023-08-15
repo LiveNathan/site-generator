@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2576af2b-2f9d-46c8-9096-3d60e5223584" name="Changes" comment="Refactor project structure and enhance section creation&#10;&#10;Updated and refactored the project structure for clarity and maintainability, by segregating the files 'index.js' and 'd.js' into a new, dedicated 'src' folder. Simultaneously, the 'index.html' file was updated to reference these files correctly. The obsolete file 'hello.js' has been purged, while on the other hand 'sections.js' was added for building site sections. This reorganization required key modifications within workspace.xml, a step that forms part of task management improvement. To top this off, the COOKING_SITE variable from 'index.js' requires exporting.">
+    <list default="true" id="2576af2b-2f9d-46c8-9096-3d60e5223584" name="Changes" comment="Refactor section creation logic in sections.js &#10;&#10;The logic for creating different types of sections (header, text, gallery, contact, links) for the COOKING_SITE in the sections.js file was refactored. The change involved introducing a utility function to create HTML elements and restructuring the section creation procedures into separate functions. The update improves code maintainability and makes the logic more scalable and flexible in anticipation of potential new types of sections in the future.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sections.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +79,8 @@
       <workItem from="1691672536979" duration="1785000" />
       <workItem from="1691880435067" duration="1543000" />
       <workItem from="1691954397754" duration="2146000" />
-      <workItem from="1692021979507" duration="2515000" />
+      <workItem from="1692021979507" duration="3250000" />
+      <workItem from="1692105316300" duration="1369000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -127,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691956994791</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Refactor section creation logic in sections.js &#10;&#10;The logic for creating different types of sections (header, text, gallery, contact, links) for the COOKING_SITE in the sections.js file was refactored. The change involved introducing a utility function to create HTML elements and restructuring the section creation procedures into separate functions. The update improves code maintainability and makes the logic more scalable and flexible in anticipation of potential new types of sections in the future.">
+      <option name="closed" value="true" />
+      <created>1692024629973</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1692024629973</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,7 +152,8 @@
     <MESSAGE value="Refactor project structure and remove outdated files&#10;&#10;Project structure was updated to create clear separation between source code and root directory. To achieve this, files 'index.js' and 'd.js' were moved to a new 'src' folder. References to these scripts in 'index.html' were updated to reflect their new locations.&#10;&#10;Additionally, 'hello.js' was removed from project as it has become outdated and is no longer required. &#10;&#10;Simultaneously, PropertiesComponent in the workspace.xml was formatted. &#10;&#10;These changes aim to streamline the project's structure and enhance its maintainability." />
     <MESSAGE value="Refactor project structure and remove outdated files.&#10;&#10;Reorganized project structure for clarity and maintainability by creating a new 'src' folder and moving 'index.js' and 'd.js' into it. This also required updating 'index.html' to correctly reference these scripts. 'hello.js' - an outdated file - was removed. Workspace.xml was likewise formatted, and a fresh task introduced in the local task counter. Additionally, a new file 'sections.js' was created exporting a 'COOKING_SITE' object and building site sections. Exporting the COOKING_SITE variable from 'index.js' was needed for this." />
     <MESSAGE value="Refactor project structure and enhance section creation&#10;&#10;Updated and refactored the project structure for clarity and maintainability, by segregating the files 'index.js' and 'd.js' into a new, dedicated 'src' folder. Simultaneously, the 'index.html' file was updated to reference these files correctly. The obsolete file 'hello.js' has been purged, while on the other hand 'sections.js' was added for building site sections. This reorganization required key modifications within workspace.xml, a step that forms part of task management improvement. To top this off, the COOKING_SITE variable from 'index.js' requires exporting." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor project structure and enhance section creation&#10;&#10;Updated and refactored the project structure for clarity and maintainability, by segregating the files 'index.js' and 'd.js' into a new, dedicated 'src' folder. Simultaneously, the 'index.html' file was updated to reference these files correctly. The obsolete file 'hello.js' has been purged, while on the other hand 'sections.js' was added for building site sections. This reorganization required key modifications within workspace.xml, a step that forms part of task management improvement. To top this off, the COOKING_SITE variable from 'index.js' requires exporting." />
+    <MESSAGE value="Refactor section creation logic in sections.js &#10;&#10;The logic for creating different types of sections (header, text, gallery, contact, links) for the COOKING_SITE in the sections.js file was refactored. The change involved introducing a utility function to create HTML elements and restructuring the section creation procedures into separate functions. The update improves code maintainability and makes the logic more scalable and flexible in anticipation of potential new types of sections in the future." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor section creation logic in sections.js &#10;&#10;The logic for creating different types of sections (header, text, gallery, contact, links) for the COOKING_SITE in the sections.js file was refactored. The change involved introducing a utility function to create HTML elements and restructuring the section creation procedures into separate functions. The update improves code maintainability and makes the logic more scalable and flexible in anticipation of potential new types of sections in the future." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

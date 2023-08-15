@@ -1,5 +1,3 @@
-import {COOKING_SITE} from './index.js';
-
 const createHTMLElement = (element, id, classes = []) => {
     const htmlElement = document.createElement(element);
     if (id) htmlElement.id = id.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^a-z0-9\-]/g, '');
@@ -15,10 +13,13 @@ const createHeader = (section) => {
 
     if (section.hasOwnProperty('images') && section.images.length > 0) {
         header.style.backgroundImage = `url(${section.images[0]})`;
-        if (section.images.length > 1) createGallery(section.images);
+        if (section.images.length > 1) {
+            const gallery = createGallery(section.images);
+            headerContainer.append(gallery);
+        }
     }
 
-    document.body.appendChild(headerContainer);
+    return headerContainer;
 }
 
 const createText = (section) => {
@@ -31,25 +32,25 @@ const createText = (section) => {
     text.innerText = section.text;
     textContainer.append(text);
 
-    document.body.appendChild(textContainer);
+    return textContainer;
 }
 
 const createGallery = (images) => {
     const imagesContainer = createHTMLElement('div');
+    imagesContainer.classList.add('flex', 'border', 'overflow-auto');
     images.forEach(imageUrl => {
         const image = createHTMLElement('img');
         image.src = imageUrl;
         imagesContainer.appendChild(image);
     });
-    document.body.appendChild(imagesContainer);
+
+    return imagesContainer;
 }
 
 const createContact = (section) => {
-    // Logic for preparing Contact section will go here.
 }
 
 const createLinks = (section) => {
-    // Logic for preparing Links section will go here.
 }
 
 const sectionCreators = {
@@ -60,8 +61,9 @@ const sectionCreators = {
     'links': createLinks
 };
 
-COOKING_SITE.sections.forEach(section => {
-    if (sectionCreators[section.type]) {
-        sectionCreators[section.type](section);
-    }
-});
+function buildSections(sections) {
+    const body = document.getElementById('root');
+    sections.forEach(section => {
+        body.appendChild(sectionCreators[section.type](section));
+    })
+}
