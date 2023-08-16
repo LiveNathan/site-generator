@@ -48,7 +48,43 @@ const createGallery = (images) => {
 }
 
 const createContact = (section) => {
-}
+    const contact = createHTMLElement('div', 'contact-container');
+
+    Object.keys(section).forEach(key => {
+        if (contactCreators.hasOwnProperty(key)) {
+            contact.appendChild(contactCreators[key](section[key]));
+        }
+    });
+
+    return contact;
+};
+
+const createEmail = (email) => {
+    const element = createHTMLElement('p');
+    element.innerText = `Email: ${email}`;
+    return element;
+};
+
+const createPhone = (phone) => {
+    const element = createHTMLElement('p');
+    element.innerText = `Phone: ${phone}`;
+    return element;
+};
+
+const createForm = (form) => {
+    const formContainer = createHTMLElement('form');
+
+    form.forEach(input => {
+        const inputElement = createHTMLElement('input');
+        inputElement.type = input.type;
+        inputElement.required = input.required;
+        inputElement.placeholder = input.label;
+
+        formContainer.append(inputElement);
+    });
+
+    return formContainer;
+};
 
 const createLinks = (section) => {
 }
