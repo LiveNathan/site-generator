@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2576af2b-2f9d-46c8-9096-3d60e5223584" name="Changes" comment="Refactor project structure and enhance section creation&#10;&#10;Updated and refactored the project structure for clarity and maintainability, by segregating the files 'index.js' and 'd.js' into a new, dedicated 'src' folder. Simultaneously, the 'index.html' file was updated to reference these files correctly. The obsolete file 'hello.js' has been purged, while on the other hand 'sections.js' was added for building site sections. This reorganization required key modifications within workspace.xml, a step that forms part of task management improvement. To top this off, the COOKING_SITE variable from 'index.js' requires exporting.">
+    <list default="true" id="2576af2b-2f9d-46c8-9096-3d60e5223584" name="Changes" comment="Refactor site section creation and relocate constant&#10;&#10;This commit refactors the site section creation for enhanced scalability in sections.js file. A utility function was introduced for HTML elements creation, which leads to separated and streamlined section creation procedures. The COOKING_SITE constant was relocated from index.js to sites.js to improve organization. Index.html and index.js were also adjusted for overall consistency.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sections.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +24,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
