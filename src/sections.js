@@ -47,41 +47,74 @@ const createGallery = (images) => {
     return imagesContainer;
 }
 
-const createContact = (section) => {
-    const contact = createHTMLElement('div', 'contact-container');
+const contactCreators = {
+    'header': createHeader,
+    'email': createEmail,
+    'phone': createPhone,
+    'form': createForm,
+    'images': createGallery
+};
 
-    Object.keys(section).forEach(key => {
-        if (contactCreators.hasOwnProperty(key)) {
-            contact.appendChild(contactCreators[key](section[key]));
+const createContact = (section) => {
+    const contactContainer = createHTMLElement('div', 'contact-container');
+
+    Object.entries(section).forEach(([key, value]) => {
+        if(key !== "type" && contactCreators.hasOwnProperty(key)){
+            contactContainer.appendChild(contactCreators[key](value));
         }
     });
 
-    return contact;
+    return contactContainer;
 };
 
 const createEmail = (email) => {
-    const element = createHTMLElement('p');
-    element.innerText = `Email: ${email}`;
-    return element;
+    const element = createHTMLElement('a');
+    if (typeof email === 'string' && email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)){
+        element.href = `mailto:${email}`;
+        element.innerText = `Email: ${email}`;
+        return element;
+    } else {
+        alert("Please check your email! It doesn't look correct.")
+    }
+    throw new Error("Invalid Email");
 };
 
 const createPhone = (phone) => {
     const element = createHTMLElement('p');
-    element.innerText = `Phone: ${phone}`;
-    return element;
+    if (typeof phone === 'string'){
+        element.innerText = `Phone: ${phone}`;
+        return element;
+    }
+    throw new Error("Invalid Phone");
 };
 
 const createForm = (form) => {
-    const formContainer = createHTMLElement('form');
+    const formContainer = createHTMLElement('form', 'contact-form');
+    formContainer.action("https://httpbin.org/anything");
+    formContainer.method("post");
 
     form.forEach(input => {
-        const inputElement = createHTMLElement('input');
-        inputElement.type = input.type;
-        inputElement.required = input.required;
-        inputElement.placeholder = input.label;
+        if (input.hasOwnProperty('type') && input.hasOwnProperty('label')){
+            const inputIdString = input.label.toLowerCase() + '-input';
+            const inputElement = createHTMLElement('input', inputIdString);
+            inputElement.type = input.type;
+            inputElement.required = input.required;
+            inputElement.placeholder = input.label;
+            inputElement.label = input.label;
+            inputElement.name = input.label;
 
-        formContainer.append(inputElement);
+            const label = createEmail('label');
+            label.htmlFor = inputIdString;
+
+            formContainer.append(inputElement);
+        }
     });
+
+    const submitButton = createHTMLElement('input', 'submit', 'bg-blue');
+    submitButton.type = 'submit';
+    submitButton.value = 'Submit';
+
+    formContainer.append(submitButton);
 
     return formContainer;
 };
@@ -103,3 +136,20 @@ function buildSections(sections) {
         body.appendChild(sectionCreators[section.type](section));
     })
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const formData = new FormData(form);
+
+        fetch('https://httpbin.org/anything', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(result => console.log('Success:', result))
+            .catch(error => console.error('Error:', error));
+
+    })
+})
