@@ -1,7 +1,12 @@
 const createHTMLElement = (element, id, classes = []) => {
     const htmlElement = document.createElement(element);
     if (id) htmlElement.id = id.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^a-z0-9\-]/g, '');
+
+    if(typeof classes === 'string'){
+        classes = [classes];
+    }
     if (classes && classes.length > 0) classes.forEach(cls => htmlElement.classList.add(cls));
+
     return htmlElement;
 }
 
@@ -11,7 +16,7 @@ const createHeader = (section) => {
     header.innerText = section.header;
     headerContainer.append(header);
 
-    if (section.hasOwnProperty('images') && section.images.length > 0) {
+    if (section.hasOwnProperty('images') && Array.isArray(section.images) && section.images.length > 0) {
         header.style.backgroundImage = `url(${section.images[0]})`;
         if (section.images.length > 1) {
             const gallery = createGallery(section.images);
@@ -47,26 +52,6 @@ const createGallery = (images) => {
     return imagesContainer;
 }
 
-const contactCreators = {
-    'header': createHeader,
-    'email': createEmail,
-    'phone': createPhone,
-    'form': createForm,
-    'images': createGallery
-};
-
-const createContact = (section) => {
-    const contactContainer = createHTMLElement('div', 'contact-container');
-
-    Object.entries(section).forEach(([key, value]) => {
-        if(key !== "type" && contactCreators.hasOwnProperty(key)){
-            contactContainer.appendChild(contactCreators[key](value));
-        }
-    });
-
-    return contactContainer;
-};
-
 const createEmail = (email) => {
     const element = createHTMLElement('a');
     if (typeof email === 'string' && email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)){
@@ -90,12 +75,12 @@ const createPhone = (phone) => {
 
 const createForm = (form) => {
     const formContainer = createHTMLElement('form', 'contact-form');
-    formContainer.action("https://httpbin.org/anything");
-    formContainer.method("post");
+    formContainer.action = "https://httpbin.org/anything";
+    formContainer.method = "post";
 
     form.forEach(input => {
         if (input.hasOwnProperty('type') && input.hasOwnProperty('label')){
-            const inputIdString = input.label.toLowerCase() + '-input';
+            const inputIdString = input.label.toLowerCase() + "-input";
             const inputElement = createHTMLElement('input', inputIdString);
             inputElement.type = input.type;
             inputElement.required = input.required;
@@ -103,9 +88,10 @@ const createForm = (form) => {
             inputElement.label = input.label;
             inputElement.name = input.label;
 
-            const label = createEmail('label');
+            const label = createHTMLElement('label');
             label.htmlFor = inputIdString;
 
+            formContainer.append(label);
             formContainer.append(inputElement);
         }
     });
@@ -122,10 +108,30 @@ const createForm = (form) => {
 const createLinks = (section) => {
 }
 
+const contactCreators = {
+    'header': createHeader,
+    'email': createEmail,
+    'phone': createPhone,
+    'form': createForm,
+    'images': createGallery
+};
+
+const createContact = (section) => {
+    const contactContainer = createHTMLElement('div', 'contact-container');
+
+    Object.entries(section).forEach(([key, value]) => {
+        if(key !== "type" && contactCreators.hasOwnProperty(key)){
+            contactContainer.appendChild(contactCreators[key](value));
+        }
+    });
+
+    return contactContainer;
+};
+
 const sectionCreators = {
     'header': createHeader,
     'text': createText,
-    'gallery': createGallery,
+    'gallery': section => createGallery(section.images),
     'contact': createContact,
     'links': createLinks
 };
@@ -136,20 +142,3 @@ function buildSections(sections) {
         body.appendChild(sectionCreators[section.type](section));
     })
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("contact-form");
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        const formData = new FormData(form);
-
-        fetch('https://httpbin.org/anything', {
-            method: 'POST',
-            body: formData
-        })
-            .then(response => response.json())
-            .then(result => console.log('Success:', result))
-            .catch(error => console.error('Error:', error));
-
-    })
-})
