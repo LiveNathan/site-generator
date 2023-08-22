@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2576af2b-2f9d-46c8-9096-3d60e5223584" name="Changes" comment="Update contact section with improved functionality&#10;&#10;Updated the 'createContact' function in 'sections.js' to add contact section rendering. It includes 'createEmail', 'createPhone', and 'createForm' helper functions for creating associated HTML elements. Consequently, these updates enhance the form's interactivity and user experience. Also, the script reference in 'index.html' was updated from 'd.js' to 'sites.js'. A new 'form.js' script file has also been added, which includes a call to a 'build_form' function.">
+    <list default="true" id="2576af2b-2f9d-46c8-9096-3d60e5223584" name="Changes" comment="Enhance contact section rendering and functionality&#10;&#10;Updated the 'createContact' function in 'sections.js' which now includes 'createEmail', 'createPhone', &amp; 'createForm' helper functions for creating HTML elements. This enhances the form's interactivity and user experience. Also updated the script reference in 'index.html' from 'd.js' to 'sites.js'. Added a new 'form.js' script file inclusive of a call to a 'build_form' function. These changes ensure that the contact section is more interactive and user-friendly.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sections.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +87,9 @@
       <workItem from="1692109323914" duration="1511000" />
       <workItem from="1692276965413" duration="2023000" />
       <workItem from="1692553946529" duration="3355000" />
-      <workItem from="1692623348417" duration="2428000" />
+      <workItem from="1692623348417" duration="2536000" />
+      <workItem from="1692633932480" duration="144000" />
+      <workItem from="1692711238969" duration="2642000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -179,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692556969708</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Enhance contact section rendering and functionality&#10;&#10;Updated the 'createContact' function in 'sections.js' which now includes 'createEmail', 'createPhone', &amp; 'createForm' helper functions for creating HTML elements. This enhances the form's interactivity and user experience. Also updated the script reference in 'index.html' from 'd.js' to 'sites.js'. Added a new 'form.js' script file inclusive of a call to a 'build_form' function. These changes ensure that the contact section is more interactive and user-friendly.">
+      <option name="closed" value="true" />
+      <created>1692626399920</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1692626399920</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,19 +218,9 @@
     <MESSAGE value="all" />
     <MESSAGE value="Add contact section rendering functionality&#10;&#10;The 'createContact' function was updated to implement contact section rendering in 'sections.js'. This includes the addition of 'createEmail', 'createPhone', and 'createForm' helper functions for creating respective elements. Also, the script reference in 'index.html' was updated from 'd.js' to 'sites.js'." />
     <MESSAGE value="Update contact section with improved functionality&#10;&#10;Updated the 'createContact' function in 'sections.js' to add contact section rendering. It includes 'createEmail', 'createPhone', and 'createForm' helper functions for creating associated HTML elements. Consequently, these updates enhance the form's interactivity and user experience. Also, the script reference in 'index.html' was updated from 'd.js' to 'sites.js'. A new 'form.js' script file has also been added, which includes a call to a 'build_form' function." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update contact section with improved functionality&#10;&#10;Updated the 'createContact' function in 'sections.js' to add contact section rendering. It includes 'createEmail', 'createPhone', and 'createForm' helper functions for creating associated HTML elements. Consequently, these updates enhance the form's interactivity and user experience. Also, the script reference in 'index.html' was updated from 'd.js' to 'sites.js'. A new 'form.js' script file has also been added, which includes a call to a 'build_form' function." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/sections.js</url>
-          <line>82</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Enhance contact section rendering and functionality&#10;&#10;Updated the 'createContact' function in 'sections.js' which now includes 'createEmail', 'createPhone', &amp; 'createForm' helper functions for creating HTML elements. This enhances the form's interactivity and user experience. Also updated the script reference in 'index.html' from 'd.js' to 'sites.js'. Added a new 'form.js' script file inclusive of a call to a 'build_form' function. These changes ensure that the contact section is more interactive and user-friendly" />
+    <MESSAGE value="Enhance contact section rendering and functionality&#10;&#10;Updated the 'createContact' function in 'sections.js' which now includes 'createEmail', 'createPhone', &amp; 'createForm' helper functions for creating HTML elements. This enhances the form's interactivity and user experience. Also updated the script reference in 'index.html' from 'd.js' to 'sites.js'. Added a new 'form.js' script file inclusive of a call to a 'build_form' function. These changes ensure that the contact section is more interactive and user-friendly." />
+    <option name="LAST_COMMIT_MESSAGE" value="Enhance contact section rendering and functionality&#10;&#10;Updated the 'createContact' function in 'sections.js' which now includes 'createEmail', 'createPhone', &amp; 'createForm' helper functions for creating HTML elements. This enhances the form's interactivity and user experience. Also updated the script reference in 'index.html' from 'd.js' to 'sites.js'. Added a new 'form.js' script file inclusive of a call to a 'build_form' function. These changes ensure that the contact section is more interactive and user-friendly." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

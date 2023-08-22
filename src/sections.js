@@ -2,7 +2,7 @@ const createHTMLElement = (element, id, classes = []) => {
     const htmlElement = document.createElement(element);
     if (id) htmlElement.id = id.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^a-z0-9\-]/g, '');
 
-    if(typeof classes === 'string'){
+    if (typeof classes === 'string') {
         classes = [classes];
     }
     if (classes && classes.length > 0) classes.forEach(cls => htmlElement.classList.add(cls));
@@ -12,8 +12,14 @@ const createHTMLElement = (element, id, classes = []) => {
 
 const createHeader = (section) => {
     const headerContainer = createHTMLElement('div');
-    const header = createHTMLElement('h2', section.header, ['header', 'text-2xl', 'font-bold']);
-    header.innerText = section.header;
+    let headerObject;
+    if (section.hasOwnProperty('header')) {
+        headerObject = section.header;
+    } else {
+        headerObject = section;
+    }
+    const header = createHTMLElement('h2', headerObject, ['header', 'text-2xl', 'font-bold']);
+    header.innerText = headerObject;
     headerContainer.append(header);
 
     if (section.hasOwnProperty('images') && Array.isArray(section.images) && section.images.length > 0) {
@@ -46,6 +52,7 @@ const createGallery = (images) => {
     images.forEach(imageUrl => {
         const image = createHTMLElement('img');
         image.src = imageUrl;
+        image.alt = imageUrl;
         imagesContainer.appendChild(image);
     });
 
@@ -54,7 +61,7 @@ const createGallery = (images) => {
 
 const createEmail = (email) => {
     const element = createHTMLElement('a');
-    if (typeof email === 'string' && email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)){
+    if (typeof email === 'string' && email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
         element.href = `mailto:${email}`;
         element.innerText = `Email: ${email}`;
         return element;
@@ -66,7 +73,7 @@ const createEmail = (email) => {
 
 const createPhone = (phone) => {
     const element = createHTMLElement('p');
-    if (typeof phone === 'string'){
+    if (typeof phone === 'string') {
         element.innerText = `Phone: ${phone}`;
         return element;
     }
@@ -74,14 +81,14 @@ const createPhone = (phone) => {
 };
 
 const createForm = (form) => {
-    const formContainer = createHTMLElement('form', 'contact-form');
+    const formContainer = createHTMLElement('form', 'contact-form', ['flex', 'flex-col', 'gap-1']);
     formContainer.action = "https://httpbin.org/anything";
     formContainer.method = "post";
 
     form.forEach(input => {
-        if (input.hasOwnProperty('type') && input.hasOwnProperty('label')){
+        if (input.hasOwnProperty('type') && input.hasOwnProperty('label')) {
             const inputIdString = input.label.toLowerCase() + "-input";
-            const inputElement = createHTMLElement('input', inputIdString);
+            const inputElement = createHTMLElement('input', inputIdString, ['pl-2']);
             inputElement.type = input.type;
             inputElement.required = input.required;
             inputElement.placeholder = input.label;
@@ -96,7 +103,7 @@ const createForm = (form) => {
         }
     });
 
-    const submitButton = createHTMLElement('input', 'submit', 'bg-blue');
+    const submitButton = createHTMLElement('input', 'submit', ['bg-blue']);
     submitButton.type = 'submit';
     submitButton.value = 'Submit';
 
@@ -104,9 +111,6 @@ const createForm = (form) => {
 
     return formContainer;
 };
-
-const createLinks = (section) => {
-}
 
 const contactCreators = {
     'header': createHeader,
@@ -120,8 +124,10 @@ const createContact = (section) => {
     const contactContainer = createHTMLElement('div', 'contact-container');
 
     Object.entries(section).forEach(([key, value]) => {
-        if(key !== "type" && contactCreators.hasOwnProperty(key)){
+        if (key !== "type" && contactCreators.hasOwnProperty(key)) {
             contactContainer.appendChild(contactCreators[key](value));
+        } else {
+            console.error(`Key ${key} does not exist in contact creators.`);
         }
     });
 
@@ -132,12 +138,12 @@ const sectionCreators = {
     'header': createHeader,
     'text': createText,
     'gallery': section => createGallery(section.images),
-    'contact': createContact,
-    'links': createLinks
+    'contact': createContact
 };
 
 function buildSections(sections) {
     const body = document.getElementById('root');
+    body.classList.add('flex', 'flex-col', 'justify-center', 'gap-4');
     sections.forEach(section => {
         body.appendChild(sectionCreators[section.type](section));
     })
